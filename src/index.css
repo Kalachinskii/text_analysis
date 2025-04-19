@@ -1,0 +1,14 @@
+:root {
+    --color-text: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
