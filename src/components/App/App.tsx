@@ -21,7 +21,7 @@ function App() {
                 placeholderValue="Введите текст"
             />
             <BtnBox />
-            <CardBox />
+            <CardBox text={text} />
             <AnalysisBox />
         </div>
     );
