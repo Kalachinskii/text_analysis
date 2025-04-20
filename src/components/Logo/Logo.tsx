@@ -31,6 +31,7 @@ export function Logo() {
             />
             <div onClick={toggleTheme} className={styles.themeBtn}>
                 <img
+                    className={styles.logoBtn}
                     src={`${
                         themeToggle == "light"
                             ? "/image/icon/icon-moon.svg"

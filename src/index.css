@@ -7,6 +7,7 @@
     --color-focus-outline: 2px solid #c27cf8;
     --chadow-box: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --color-bacground-transparent: transparent;
 }
 * {
     margin: 0;
@@ -21,6 +22,7 @@ a {
 
 .darkTheme,
 .darkTheme * {
+    background-image: url("/image/bg-dark-theme.png");
     --color-text: #fff;
     --color-background: #2a2b37;
     --color-background-body: #12131a;
