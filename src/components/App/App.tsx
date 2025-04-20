@@ -3,6 +3,7 @@ import { Logo } from "../Logo/Logo";
 import { Textaria } from "../Textarea/Textaria";
 import { Title } from "../Title/Title";
 import styles from "./App.module.css";
+import BtnBox from "../BtnBox/BtnBox";
 
 function App() {
     const [text, setText] = useState<string>("");
@@ -17,6 +18,7 @@ function App() {
                 setText={setText}
                 placeholderValue="Введите текст"
             />
+            <BtnBox />
         </div>
     );
 }

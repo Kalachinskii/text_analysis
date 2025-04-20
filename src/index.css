@@ -5,6 +5,7 @@
     --color-border: #e4e2e2;
     --color-focus-border: 2px solid #97b3fa;
     --color-focus-outline: 2px solid #c27cf8;
+    --color-checkbox: #d3a0fa;
     --chadow-box: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --color-bacground-transparent: transparent;
@@ -13,6 +14,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 a {
@@ -23,7 +26,7 @@ a {
 .darkTheme,
 .darkTheme * {
     background-image: url("/image/bg-dark-theme.png");
-    --color-text: #fff;
+    --color-text: rgb(229 229 229);
     --color-background: #2a2b37;
     --color-background-body: #12131a;
     --color-border: #353641;
