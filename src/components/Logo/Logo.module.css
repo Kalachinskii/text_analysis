@@ -5,6 +5,10 @@
     align-content: space-between;
 }
 
+.logoBtn {
+    cursor: pointer;
+}
+
 .themeBtn {
     display: flex;
     justify-content: center;

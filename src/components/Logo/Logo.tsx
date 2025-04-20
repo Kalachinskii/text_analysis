@@ -21,6 +21,7 @@ export function Logo() {
     return (
         <div className={styles.logoBox}>
             <img
+                className={styles.logoBtn}
                 src={`${
                     themeToggle == "light"
                         ? "/image/logo/logo-light-theme.svg"
