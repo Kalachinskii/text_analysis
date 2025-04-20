@@ -12,8 +12,8 @@
     box-shadow: var(--chadow-box);
     min-height: 144px;
     border: 1px solid var(--color-border);
+    color: var(--color-text);
 }
-
 .textInput:focus {
     border: var(--color-focus-border);
     outline: var(--color-focus-outline);
