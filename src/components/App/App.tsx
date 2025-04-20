@@ -4,6 +4,7 @@ import { Textaria } from "../Textarea/Textaria";
 import { Title } from "../Title/Title";
 import styles from "./App.module.css";
 import BtnBox from "../BtnBox/BtnBox";
+import CardBox from "../CardBox/CardBox";
 
 function App() {
     const [text, setText] = useState<string>("");
@@ -19,6 +20,7 @@ function App() {
                 placeholderValue="Введите текст"
             />
             <BtnBox />
+            <CardBox />
         </div>
     );
 }
