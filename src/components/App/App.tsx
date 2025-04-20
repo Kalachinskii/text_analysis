@@ -5,6 +5,7 @@ import { Title } from "../Title/Title";
 import styles from "./App.module.css";
 import BtnBox from "../BtnBox/BtnBox";
 import CardBox from "../CardBox/CardBox";
+import { AnalysisBox } from "../AnalysisBox/Analysis";
 
 function App() {
     const [text, setText] = useState<string>("");
@@ -21,6 +22,7 @@ function App() {
             />
             <BtnBox />
             <CardBox />
+            <AnalysisBox />
         </div>
     );
 }

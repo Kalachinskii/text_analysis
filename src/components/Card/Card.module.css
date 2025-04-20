@@ -1,7 +1,7 @@
 .card {
     min-width: 320px;
     min-height: 132px;
-    background-color: #d3a0fa;
+    background: var(--background-color);
     border-radius: 0.5rem;
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
@@ -13,12 +13,14 @@
 }
 
 .count {
+    background: var(--color-bacground-transparent);
     font-size: 2.25rem;
     line-height: 2.5rem;
     font-weight: 700;
 }
 
 .title {
+    background: var(--color-bacground-transparent);
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 500;

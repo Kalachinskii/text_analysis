@@ -1,5 +1,6 @@
+import Checkbox from "../common/Checkbox/Checkbox";
 import styles from "./BtnBox.module.css";
-import Checkbox from "../Checkbox/Checkbox";
+// import Checkbox from "../common/Checkbox/Checkbox";
 
 export default function BtnBox() {
     return (

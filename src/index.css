@@ -9,6 +9,10 @@
     --chadow-box: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --color-bacground-transparent: transparent;
+    /* Переменные progress*/
+    --progress-bar-color: #d3a0fa;
+    --progress-background: #f2f2f7;
+    --progress-border-radius: 12px;
 }
 * {
     margin: 0;
@@ -31,6 +35,7 @@ a {
     --color-background-body: #12131a;
     --color-border: #353641;
     --color-focus-border: 1px solid #3a5bad;
+    --progress-background: #21222c;
 }
 
 body {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Logo.module.css";
+import { ThemeBtn } from "../common/ThemeBtn/ThemeBtn";
 
 export function Logo() {
     const [themeToggle, setThemeToggle] = useState<string>(() => {
@@ -29,17 +30,7 @@ export function Logo() {
                 } `}
                 alt="Картинка логотипа"
             />
-            <div onClick={toggleTheme} className={styles.themeBtn}>
-                <img
-                    className={styles.logoBtn}
-                    src={`${
-                        themeToggle == "light"
-                            ? "/image/icon/icon-moon.svg"
-                            : "/image/icon/icon-sun.svg"
-                    } `}
-                    alt="картинка иконки смены темы"
-                />
-            </div>
+            <ThemeBtn toggleFunTheme={toggleTheme} themeToggle={themeToggle} />
         </div>
     );
 }
