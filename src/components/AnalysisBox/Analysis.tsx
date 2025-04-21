@@ -14,11 +14,11 @@ export function AnalysisBox({ text }: IAnalysis) {
     const [analysisTextData, setAnalysisTextData] =
         useState<LetterStats | null>(null);
     const countProgressCompanents = Array(analysisTextData?.unique).fill(null);
+    const [isLimit, setIsLimit] = useState<boolean>(true);
 
     useEffect(() => {
         const newData = getDetailedLetterStats(text);
         setAnalysisTextData(newData);
-        console.log(analysisTextData);
     }, [text]);
 
     const getDetailedLetterStats = (text: string) => {
@@ -44,23 +44,32 @@ export function AnalysisBox({ text }: IAnalysis) {
         <div className={styles.analysisBox}>
             <h3 className={styles.title}>Letter Density</h3>
             <ul className={styles.ul}>
-                {analysisTextData?.unique
-                    ? countProgressCompanents.map((_, index) => {
-                          const [key, value] =
-                              analysisTextData.symbolCountArr[index] || [];
+                {analysisTextData?.unique ? (
+                    countProgressCompanents
+                        .slice(0, isLimit ? 5 : undefined)
+                        .map((_, index) => {
+                            const [key, value] =
+                                analysisTextData.symbolCountArr[index] || [];
+                            console.log(isLimit);
 
-                          return (
-                              <Progress
-                                  key={key}
-                                  letter={key}
-                                  count={value}
-                                  countSymbol={analysisTextData.total}
-                              />
-                          );
-                      })
-                    : "No characters found. Start typing to see letter density."}
+                            return (
+                                <Progress
+                                    key={key}
+                                    letter={key}
+                                    count={value}
+                                    countSymbol={analysisTextData.total}
+                                />
+                            );
+                        })
+                ) : (
+                    <h4 className={styles.noText}>
+                        No characters found. Start typing to see letter density.
+                    </h4>
+                )}
             </ul>
-            <OpenCloseButton />
+            {text && (
+                <OpenCloseButton setIsLimit={setIsLimit} isLimit={isLimit} />
+            )}
         </div>
     );
 }

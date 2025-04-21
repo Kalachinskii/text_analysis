@@ -1,13 +1,16 @@
 import { useState } from "react";
 import styles from "./OpenCloseButton.module.css";
+import { IOpenCloseButton } from "./IOpenCloseButton";
 
-export function OpenCloseButton() {
+export function OpenCloseButton({ setIsLimit, isLimit }: IOpenCloseButton) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <button
             className={styles.btn}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => {
+                setIsOpen(!isOpen), setIsLimit(!isLimit);
+            }}
             aria-expanded={isOpen}
         >
             {isOpen ? "Show less" : "See more"}
