@@ -22,7 +22,7 @@ function App() {
             />
             <BtnBox />
             <CardBox text={text} />
-            <AnalysisBox />
+            <AnalysisBox text={text} />
         </div>
     );
 }
