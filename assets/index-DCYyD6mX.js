@@ -13158,17 +13158,17 @@ const Dy = "_cardBox_1lm9p_1",
     Ry = [
         {
             title: "Total Characters",
-            imageUrl: "./image/cardElements/1.svg",
+            imageUrl: "../image/cardElements/1.svg",
             backgroundColor: "#D3A0FA",
         },
         {
             title: "Word count",
-            imageUrl: "./image/cardElements/2.svg",
+            imageUrl: "../image/cardElements/2.svg",
             backgroundColor: "#FF9F00",
         },
         {
             title: "Sentence count",
-            imageUrl: "./image/cardElements/3.svg",
+            imageUrl: "../image/cardElements/3.svg",
             backgroundColor: "#FE8159",
         },
     ],
