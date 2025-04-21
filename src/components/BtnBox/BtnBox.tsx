@@ -9,6 +9,7 @@ export default function BtnBox({
     setIsSpaceOff,
     limitText,
     setLimitText,
+    readingtTime,
 }: IBtnBox) {
     const [isChecked, setIsChecked] = useState<boolean>(false);
 
@@ -31,7 +32,7 @@ export default function BtnBox({
             {isChecked && (
                 <InputNum limitText={limitText} setLimitText={setLimitText} />
             )}
-            <p>Approx. reading time(Avg. 50WPM): &#8250;1 minute</p>
+            <p>Approx. reading time(Avg. 50WPM): &lt; {readingtTime} minute</p>
         </div>
     );
 }

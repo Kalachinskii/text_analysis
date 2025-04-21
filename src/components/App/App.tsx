@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "../Logo/Logo";
 import { Textaria } from "../Textarea/Textaria";
 import { Title } from "../Title/Title";
@@ -11,6 +11,18 @@ function App() {
     const [text, setText] = useState<string>("");
     const [isSpaceOff, setIsSpaceOff] = useState<boolean>(false);
     const [limitText, setLimitText] = useState<number | "">("");
+    const [readingtTime, setReadingtTime] = useState<number>(0);
+
+    // адаптировать дублирование в textMetrics.ts
+    const ApproxReadingTime = () =>
+        setReadingtTime(
+            Math.ceil(
+                text.split(/\s+/).filter((word) => word.length > 0).length / 50
+            )
+        );
+    useEffect(() => {
+        ApproxReadingTime();
+    }, [text]);
 
     return (
         <div className={styles.container}>
@@ -28,6 +40,7 @@ function App() {
                 setIsSpaceOff={setIsSpaceOff}
                 limitText={limitText}
                 setLimitText={setLimitText}
+                readingtTime={readingtTime}
             />
             <CardBox text={text} isSpaceOff={isSpaceOff} />
             <AnalysisBox text={text} isSpaceOff={isSpaceOff} />

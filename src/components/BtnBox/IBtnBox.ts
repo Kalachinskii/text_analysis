@@ -3,4 +3,5 @@ export interface IBtnBox {
     setIsSpaceOff: (value: boolean) => void;
     limitText: number | "";
     setLimitText: (value: number | "") => void;
+    readingtTime?: number;
 }
