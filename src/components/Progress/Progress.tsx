@@ -9,7 +9,7 @@ export function Progress({ letter = "", count, countSymbol }: IProgress) {
             <span className={styles.letter}>{letter.toUpperCase()}</span>
             <progress
                 className={styles.progress}
-                value="16.22"
+                value={percent}
                 max="100"
             ></progress>
             <span className={styles.percent}>
