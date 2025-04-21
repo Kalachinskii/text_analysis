@@ -13,6 +13,8 @@
     --progress-bar-color: #d3a0fa;
     --progress-background: #f2f2f7;
     --progress-border-radius: 12px;
+    --color-btn-add: #c27cf8;
+    --color-btn-reduce: #97b3fa;
 }
 * {
     margin: 0;

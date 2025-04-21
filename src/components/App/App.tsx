@@ -21,7 +21,7 @@ function App() {
                 setText={setText}
                 placeholderValue="Введите текст"
             />
-            <BtnBox isChecked={isSpaceOff} setIsChecked={setIsSpaceOff} />
+            <BtnBox isSpaceOff={isSpaceOff} setIsSpaceOff={setIsSpaceOff} />
             <CardBox text={text} isSpaceOff={isSpaceOff} />
             <AnalysisBox text={text} isSpaceOff={isSpaceOff} />
         </div>

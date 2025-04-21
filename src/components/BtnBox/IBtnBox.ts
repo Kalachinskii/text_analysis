@@ -1,4 +1,4 @@
 export interface IBtnBox {
-    isChecked: boolean;
-    setIsChecked: (value: boolean) => void;
+    isSpaceOff: boolean;
+    setIsSpaceOff: (value: boolean) => void;
 }
