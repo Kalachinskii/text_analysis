@@ -17,7 +17,7 @@ export function OpenCloseButton({ setIsLimit, isLimit }: IOpenCloseButton) {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24" /* Упрощенный viewBox */
+                viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
                 className={`${styles.svg} ${isOpen ? styles.svgRotate : ""}`}

@@ -9,6 +9,7 @@ import { AnalysisBox } from "../AnalysisBox/Analysis";
 
 function App() {
     const [text, setText] = useState<string>("");
+    const [isSpaceOff, setIsSpaceOff] = useState<boolean>(false);
 
     return (
         <div className={styles.container}>
@@ -20,9 +21,9 @@ function App() {
                 setText={setText}
                 placeholderValue="Введите текст"
             />
-            <BtnBox />
-            <CardBox text={text} />
-            <AnalysisBox text={text} />
+            <BtnBox isChecked={isSpaceOff} setIsChecked={setIsSpaceOff} />
+            <CardBox text={text} isSpaceOff={isSpaceOff} />
+            <AnalysisBox text={text} isSpaceOff={isSpaceOff} />
         </div>
     );
 }

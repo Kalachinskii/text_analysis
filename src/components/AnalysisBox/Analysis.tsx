@@ -10,7 +10,7 @@ interface LetterStats {
     unique: number;
 }
 
-export function AnalysisBox({ text }: IAnalysis) {
+export function AnalysisBox({ text, isSpaceOff }: IAnalysis) {
     const [analysisTextData, setAnalysisTextData] =
         useState<LetterStats | null>(null);
     const countProgressCompanents = Array(analysisTextData?.unique).fill(null);
@@ -22,11 +22,11 @@ export function AnalysisBox({ text }: IAnalysis) {
     }, [text]);
 
     const getDetailedLetterStats = (text: string) => {
-        const cleaned = text.toLowerCase().replace(/[^a-zа-яё]/g, "");
-        const totalLetters = cleaned.length;
+        const onlyText = text.toLowerCase().replace(/[^a-zа-яё]/g, "");
+        const totalLetters = onlyText.length;
         const counts: Record<string, number> = {};
 
-        for (const char of cleaned) {
+        for (const char of onlyText) {
             counts[char] = (counts[char] || 0) + 1;
         }
         const symbolCountArr = Object.entries(counts).sort(
@@ -50,14 +50,14 @@ export function AnalysisBox({ text }: IAnalysis) {
                         .map((_, index) => {
                             const [key, value] =
                                 analysisTextData.symbolCountArr[index] || [];
-                            console.log(isLimit);
 
                             return (
                                 <Progress
                                     key={key}
                                     letter={key}
                                     count={value}
-                                    countSymbol={analysisTextData.total}
+                                    text={text}
+                                    isSpaceOff={isSpaceOff}
                                 />
                             );
                         })
