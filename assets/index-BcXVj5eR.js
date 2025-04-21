@@ -4,29 +4,29 @@
     for (const U of document.querySelectorAll('link[rel="modulepreload"]'))
         d(U);
     new MutationObserver((U) => {
-        for (const Q of U)
-            if (Q.type === "childList")
-                for (const $ of Q.addedNodes)
+        for (const C of U)
+            if (C.type === "childList")
+                for (const $ of C.addedNodes)
                     $.tagName === "LINK" && $.rel === "modulepreload" && d($);
     }).observe(document, { childList: !0, subtree: !0 });
-    function M(U) {
-        const Q = {};
+    function O(U) {
+        const C = {};
         return (
-            U.integrity && (Q.integrity = U.integrity),
-            U.referrerPolicy && (Q.referrerPolicy = U.referrerPolicy),
+            U.integrity && (C.integrity = U.integrity),
+            U.referrerPolicy && (C.referrerPolicy = U.referrerPolicy),
             U.crossOrigin === "use-credentials"
-                ? (Q.credentials = "include")
+                ? (C.credentials = "include")
                 : U.crossOrigin === "anonymous"
-                ? (Q.credentials = "omit")
-                : (Q.credentials = "same-origin"),
-            Q
+                ? (C.credentials = "omit")
+                : (C.credentials = "same-origin"),
+            C
         );
     }
     function d(U) {
         if (U.ep) return;
         U.ep = !0;
-        const Q = M(U);
-        fetch(U.href, Q);
+        const C = O(U);
+        fetch(U.href, C);
     }
 })();
 var li = { exports: {} },
@@ -45,28 +45,28 @@ function X1() {
     uv = 1;
     var E = Symbol.for("react.transitional.element"),
         B = Symbol.for("react.fragment");
-    function M(d, U, Q) {
+    function O(d, U, C) {
         var $ = null;
         if (
-            (Q !== void 0 && ($ = "" + Q),
+            (C !== void 0 && ($ = "" + C),
             U.key !== void 0 && ($ = "" + U.key),
             "key" in U)
         ) {
-            Q = {};
-            for (var hl in U) hl !== "key" && (Q[hl] = U[hl]);
-        } else Q = U;
+            C = {};
+            for (var hl in U) hl !== "key" && (C[hl] = U[hl]);
+        } else C = U;
         return (
-            (U = Q.ref),
+            (U = C.ref),
             {
                 $$typeof: E,
                 type: d,
                 key: $,
                 ref: U !== void 0 ? U : null,
-                props: Q,
+                props: C,
             }
         );
     }
-    return (me.Fragment = B), (me.jsx = M), (me.jsxs = M), me;
+    return (me.Fragment = B), (me.jsx = O), (me.jsxs = O), me;
 }
 var av;
 function C1() {
@@ -89,10 +89,10 @@ function Q1() {
     ev = 1;
     var E = Symbol.for("react.transitional.element"),
         B = Symbol.for("react.portal"),
-        M = Symbol.for("react.fragment"),
+        O = Symbol.for("react.fragment"),
         d = Symbol.for("react.strict_mode"),
         U = Symbol.for("react.profiler"),
-        Q = Symbol.for("react.consumer"),
+        C = Symbol.for("react.consumer"),
         $ = Symbol.for("react.context"),
         hl = Symbol.for("react.forward_ref"),
         N = Symbol.for("react.suspense"),
@@ -213,32 +213,32 @@ function Q1() {
     function Hl(s, A, D, z, q) {
         var F = typeof s;
         (F === "undefined" || F === "boolean") && (s = null);
-        var C = !1;
-        if (s === null) C = !0;
+        var Q = !1;
+        if (s === null) Q = !0;
         else
             switch (F) {
                 case "bigint":
                 case "string":
                 case "number":
-                    C = !0;
+                    Q = !0;
                     break;
                 case "object":
                     switch (s.$$typeof) {
                         case E:
                         case B:
-                            C = !0;
+                            Q = !0;
                             break;
                         case p:
-                            return (C = s._init), Hl(C(s._payload), A, D, z, q);
+                            return (Q = s._init), Hl(Q(s._payload), A, D, z, q);
                     }
             }
-        if (C)
+        if (Q)
             return (
                 (q = q(s)),
-                (C = z === "" ? "." + pl(s, 0) : z),
+                (Q = z === "" ? "." + pl(s, 0) : z),
                 yt(q)
                     ? ((D = ""),
-                      C != null && (D = C.replace(Ot, "$&/") + "/"),
+                      Q != null && (D = Q.replace(Ot, "$&/") + "/"),
                       Hl(q, A, D, "", function (Qt) {
                           return Qt;
                       }))
@@ -250,19 +250,19 @@ function Q1() {
                                   (q.key == null || (s && s.key === q.key)
                                       ? ""
                                       : ("" + q.key).replace(Ot, "$&/") + "/") +
-                                  C
+                                  Q
                           )),
                       A.push(q)),
                 1
             );
-        C = 0;
+        Q = 0;
         var wl = z === "" ? "." : z + ":";
         if (yt(s))
             for (var sl = 0; sl < s.length; sl++)
-                (z = s[sl]), (F = wl + pl(z, sl)), (C += Hl(z, A, D, F, q));
+                (z = s[sl]), (F = wl + pl(z, sl)), (Q += Hl(z, A, D, F, q));
         else if (((sl = nl(s)), typeof sl == "function"))
             for (s = sl.call(s), sl = 0; !(z = s.next()).done; )
-                (z = z.value), (F = wl + pl(z, sl++)), (C += Hl(z, A, D, F, q));
+                (z = z.value), (F = wl + pl(z, sl++)), (Q += Hl(z, A, D, F, q));
         else if (F === "object") {
             if (typeof s.then == "function") return Hl(hu(s), A, D, z, q);
             throw (
@@ -278,7 +278,7 @@ function Q1() {
                 ))
             );
         }
-        return C;
+        return Q;
     }
     function S(s, A, D) {
         if (s == null) return s;
@@ -291,7 +291,7 @@ function Q1() {
             z
         );
     }
-    function O(s) {
+    function M(s) {
         if (s._status === -1) {
             var A = s._result;
             (A = A()),
@@ -377,7 +377,7 @@ function Q1() {
             },
         }),
         (Z.Component = Gl),
-        (Z.Fragment = M),
+        (Z.Fragment = O),
         (Z.Profiler = U),
         (Z.PureComponent = zt),
         (Z.StrictMode = d),
@@ -405,19 +405,19 @@ function Q1() {
                 q = s.key,
                 F = void 0;
             if (A != null)
-                for (C in (A.ref !== void 0 && (F = void 0),
+                for (Q in (A.ref !== void 0 && (F = void 0),
                 A.key !== void 0 && (q = "" + A.key),
                 A))
-                    !Ll.call(A, C) ||
-                        C === "key" ||
-                        C === "__self" ||
-                        C === "__source" ||
-                        (C === "ref" && A.ref === void 0) ||
-                        (z[C] = A[C]);
-            var C = arguments.length - 2;
-            if (C === 1) z.children = D;
-            else if (1 < C) {
-                for (var wl = Array(C), sl = 0; sl < C; sl++)
+                    !Ll.call(A, Q) ||
+                        Q === "key" ||
+                        Q === "__self" ||
+                        Q === "__source" ||
+                        (Q === "ref" && A.ref === void 0) ||
+                        (z[Q] = A[Q]);
+            var Q = arguments.length - 2;
+            if (Q === 1) z.children = D;
+            else if (1 < Q) {
+                for (var wl = Array(Q), sl = 0; sl < Q; sl++)
                     wl[sl] = arguments[sl + 2];
                 z.children = wl;
             }
@@ -434,7 +434,7 @@ function Q1() {
                     Consumer: null,
                 }),
                 (s.Provider = s),
-                (s.Consumer = { $$typeof: Q, _context: s }),
+                (s.Consumer = { $$typeof: C, _context: s }),
                 s
             );
         }),
@@ -449,16 +449,16 @@ function Q1() {
                         z !== "__self" &&
                         z !== "__source" &&
                         (q[z] = A[z]);
-            var C = arguments.length - 2;
-            if (C === 1) q.children = D;
-            else if (1 < C) {
-                for (var wl = Array(C), sl = 0; sl < C; sl++)
+            var Q = arguments.length - 2;
+            if (Q === 1) q.children = D;
+            else if (1 < Q) {
+                for (var wl = Array(Q), sl = 0; sl < Q; sl++)
                     wl[sl] = arguments[sl + 2];
                 q.children = wl;
             }
             if (s && s.defaultProps)
-                for (z in ((C = s.defaultProps), C))
-                    q[z] === void 0 && (q[z] = C[z]);
+                for (z in ((Q = s.defaultProps), Q))
+                    q[z] === void 0 && (q[z] = Q[z]);
             return Kl(s, F, void 0, void 0, null, q);
         }),
         (Z.createRef = function () {
@@ -472,7 +472,7 @@ function Q1() {
             return {
                 $$typeof: p,
                 _payload: { _status: -1, _result: s },
-                _init: O,
+                _init: M,
             };
         }),
         (Z.memo = function (s, A) {
@@ -564,7 +564,7 @@ var nv;
 function ii() {
     return nv || ((nv = 1), (ti.exports = Q1())), ti.exports;
 }
-var jl = ii(),
+var Yl = ii(),
     ui = { exports: {} },
     ge = {},
     ai = { exports: {} },
@@ -583,24 +583,24 @@ function Z1() {
         cv ||
             ((cv = 1),
             (function (E) {
-                function B(S, O) {
+                function B(S, M) {
                     var G = S.length;
-                    S.push(O);
+                    S.push(M);
                     l: for (; 0 < G; ) {
                         var cl = (G - 1) >>> 1,
                             s = S[cl];
-                        if (0 < U(s, O)) (S[cl] = O), (S[G] = s), (G = cl);
+                        if (0 < U(s, M)) (S[cl] = M), (S[G] = s), (G = cl);
                         else break l;
                     }
                 }
-                function M(S) {
+                function O(S) {
                     return S.length === 0 ? null : S[0];
                 }
                 function d(S) {
                     if (S.length === 0) return null;
-                    var O = S[0],
+                    var M = S[0],
                         G = S.pop();
-                    if (G !== O) {
+                    if (G !== M) {
                         S[0] = G;
                         l: for (
                             var cl = 0, s = S.length, A = s >>> 1;
@@ -620,20 +620,20 @@ function Z1() {
                             else break l;
                         }
                     }
-                    return O;
+                    return M;
                 }
-                function U(S, O) {
-                    var G = S.sortIndex - O.sortIndex;
-                    return G !== 0 ? G : S.id - O.id;
+                function U(S, M) {
+                    var G = S.sortIndex - M.sortIndex;
+                    return G !== 0 ? G : S.id - M.id;
                 }
                 if (
                     ((E.unstable_now = void 0),
                     typeof performance == "object" &&
                         typeof performance.now == "function")
                 ) {
-                    var Q = performance;
+                    var C = performance;
                     E.unstable_now = function () {
-                        return Q.now();
+                        return C.now();
                     };
                 } else {
                     var $ = Date,
@@ -656,20 +656,20 @@ function Z1() {
                         typeof clearTimeout == "function" ? clearTimeout : null,
                     Nl = typeof setImmediate < "u" ? setImmediate : null;
                 function yt(S) {
-                    for (var O = M(_); O !== null; ) {
-                        if (O.callback === null) d(_);
-                        else if (O.startTime <= S)
-                            d(_), (O.sortIndex = O.expirationTime), B(N, O);
+                    for (var M = O(_); M !== null; ) {
+                        if (M.callback === null) d(_);
+                        else if (M.startTime <= S)
+                            d(_), (M.sortIndex = M.expirationTime), B(N, M);
                         else break;
-                        O = M(_);
+                        M = O(_);
                     }
                 }
                 function k(S) {
                     if (((dt = !1), yt(S), !Ml))
-                        if (M(N) !== null) (Ml = !0), Ll || ((Ll = !0), pl());
+                        if (O(N) !== null) (Ml = !0), Ll || ((Ll = !0), pl());
                         else {
-                            var O = M(_);
-                            O !== null && Hl(k, O.startTime - S);
+                            var M = O(_);
+                            M !== null && Hl(k, M.startTime - S);
                         }
                 }
                 var Ll = !1,
@@ -683,7 +683,7 @@ function Z1() {
                     if (((Gl = !1), Ll)) {
                         var S = E.unstable_now();
                         gt = S;
-                        var O = !0;
+                        var M = !0;
                         try {
                             l: {
                                 (Ml = !1),
@@ -693,7 +693,7 @@ function Z1() {
                                 try {
                                     t: {
                                         for (
-                                            yt(S), W = M(N);
+                                            yt(S), W = O(N);
                                             W !== null &&
                                             !(W.expirationTime > S && Bu());
 
@@ -711,29 +711,29 @@ function Z1() {
                                                 ) {
                                                     (W.callback = s),
                                                         yt(S),
-                                                        (O = !0);
+                                                        (M = !0);
                                                     break t;
                                                 }
-                                                W === M(N) && d(N), yt(S);
+                                                W === O(N) && d(N), yt(S);
                                             } else d(N);
-                                            W = M(N);
+                                            W = O(N);
                                         }
-                                        if (W !== null) O = !0;
+                                        if (W !== null) M = !0;
                                         else {
-                                            var A = M(_);
+                                            var A = O(_);
                                             A !== null &&
                                                 Hl(k, A.startTime - S),
-                                                (O = !1);
+                                                (M = !1);
                                         }
                                     }
                                     break l;
                                 } finally {
                                     (W = null), (nl = G), (gl = !1);
                                 }
-                                O = void 0;
+                                M = void 0;
                             }
                         } finally {
-                            O ? pl() : (Ll = !1);
+                            M ? pl() : (Ll = !1);
                         }
                     }
                 }
@@ -753,10 +753,10 @@ function Z1() {
                     pl = function () {
                         du(Ot, 0);
                     };
-                function Hl(S, O) {
+                function Hl(S, M) {
                     Kl = du(function () {
                         S(E.unstable_now());
-                    }, O);
+                    }, M);
                 }
                 (E.unstable_IdlePriority = 5),
                     (E.unstable_ImmediatePriority = 1),
@@ -782,13 +782,13 @@ function Z1() {
                             case 1:
                             case 2:
                             case 3:
-                                var O = 3;
+                                var M = 3;
                                 break;
                             default:
-                                O = nl;
+                                M = nl;
                         }
                         var G = nl;
-                        nl = O;
+                        nl = M;
                         try {
                             return S();
                         } finally {
@@ -798,7 +798,7 @@ function Z1() {
                     (E.unstable_requestPaint = function () {
                         Gl = !0;
                     }),
-                    (E.unstable_runWithPriority = function (S, O) {
+                    (E.unstable_runWithPriority = function (S, M) {
                         switch (S) {
                             case 1:
                             case 2:
@@ -812,12 +812,12 @@ function Z1() {
                         var G = nl;
                         nl = S;
                         try {
-                            return O();
+                            return M();
                         } finally {
                             nl = G;
                         }
                     }),
-                    (E.unstable_scheduleCallback = function (S, O, G) {
+                    (E.unstable_scheduleCallback = function (S, M, G) {
                         var cl = E.unstable_now();
                         switch (
                             (typeof G == "object" && G !== null
@@ -848,7 +848,7 @@ function Z1() {
                             (s = G + s),
                             (S = {
                                 id: p++,
-                                callback: O,
+                                callback: M,
                                 priorityLevel: S,
                                 startTime: G,
                                 expirationTime: s,
@@ -857,8 +857,8 @@ function Z1() {
                             G > cl
                                 ? ((S.sortIndex = G),
                                   B(_, S),
-                                  M(N) === null &&
-                                      S === M(_) &&
+                                  O(N) === null &&
+                                      S === O(_) &&
                                       (dt ? (zt(Kl), (Kl = -1)) : (dt = !0),
                                       Hl(k, G - cl)))
                                 : ((S.sortIndex = s),
@@ -871,10 +871,10 @@ function Z1() {
                     }),
                     (E.unstable_shouldYield = Bu),
                     (E.unstable_wrapCallback = function (S) {
-                        var O = nl;
+                        var M = nl;
                         return function () {
                             var G = nl;
-                            nl = O;
+                            nl = M;
                             try {
                                 return S.apply(this, arguments);
                             } finally {
@@ -920,26 +920,26 @@ function L1() {
             " for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         );
     }
-    function M() {}
+    function O() {}
     var d = {
             d: {
-                f: M,
+                f: O,
                 r: function () {
                     throw Error(B(522));
                 },
-                D: M,
-                C: M,
-                L: M,
-                m: M,
-                X: M,
-                S: M,
-                M,
+                D: O,
+                C: O,
+                L: O,
+                m: O,
+                X: O,
+                S: O,
+                M: O,
             },
             p: 0,
             findDOMNode: null,
         },
         U = Symbol.for("react.portal");
-    function Q(N, _, p) {
+    function C(N, _, p) {
         var W =
             3 < arguments.length && arguments[3] !== void 0
                 ? arguments[3]
@@ -969,7 +969,7 @@ function L1() {
                 (_.nodeType !== 1 && _.nodeType !== 9 && _.nodeType !== 11)
             )
                 throw Error(B(299));
-            return Q(N, _, null, p);
+            return C(N, _, null, p);
         }),
         (ql.flushSync = function (N) {
             var _ = $.T,
@@ -1138,7 +1138,7 @@ function J1() {
     ov = 1;
     var E = V1(),
         B = ii(),
-        M = K1();
+        O = K1();
     function d(l) {
         var t = "https://react.dev/errors/" + l;
         if (1 < arguments.length) {
@@ -1160,7 +1160,7 @@ function J1() {
             (l.nodeType !== 1 && l.nodeType !== 9 && l.nodeType !== 11)
         );
     }
-    function Q(l) {
+    function C(l) {
         var t = l,
             u = l;
         if (l.alternate) for (; t.return; ) t = t.return;
@@ -1187,12 +1187,12 @@ function J1() {
         return null;
     }
     function hl(l) {
-        if (Q(l) !== l) throw Error(d(188));
+        if (C(l) !== l) throw Error(d(188));
     }
     function N(l) {
         var t = l.alternate;
         if (!t) {
-            if (((t = Q(l)), t === null)) throw Error(d(188));
+            if (((t = C(l)), t === null)) throw Error(d(188));
             return t !== l ? null : l;
         }
         for (var u = l, a = t; ; ) {
@@ -1335,7 +1335,7 @@ function J1() {
     }
     var Hl = Array.isArray,
         S = B.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,
-        O = M.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,
+        M = O.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,
         G = { pending: !1, data: null, method: null, action: null },
         cl = [],
         s = -1;
@@ -1350,10 +1350,10 @@ function J1() {
     }
     var q = A(null),
         F = A(null),
-        C = A(null),
+        Q = A(null),
         wl = A(null);
     function sl(l, t) {
-        switch ((z(C, t), z(F, l), z(q, null), t.nodeType)) {
+        switch ((z(Q, t), z(F, l), z(q, null), t.nodeType)) {
             case 9:
             case 11:
                 l = (l = t.documentElement) && (l = l.namespaceURI) ? No(l) : 0;
@@ -1376,7 +1376,7 @@ function J1() {
         D(q), z(q, l);
     }
     function Qt() {
-        D(q), D(F), D(C);
+        D(q), D(F), D(Q);
     }
     function Gn(l) {
         l.memoizedState !== null && z(wl, l);
@@ -1667,17 +1667,17 @@ function J1() {
         );
     }
     function mi() {
-        var l = O.p;
+        var l = M.p;
         return l !== 0
             ? l
             : ((l = window.event), l === void 0 ? 32 : ko(l.type));
     }
     function Uv(l, t) {
-        var u = O.p;
+        var u = M.p;
         try {
-            return (O.p = l), t();
+            return (M.p = l), t();
         } finally {
-            O.p = u;
+            M.p = u;
         }
     }
     var Vt = Math.random().toString(36).slice(2),
@@ -3432,7 +3432,7 @@ Error generating stack: ` +
                 (Rt = ft[--it]),
                 (ft[it] = null);
     }
-    var Yl = null,
+    var jl = null,
         dl = null,
         P = !1,
         Au = null,
@@ -3508,8 +3508,8 @@ Error generating stack: ` +
             t || zu(l);
     }
     function ds(l) {
-        for (Yl = l.return; Yl; )
-            switch (Yl.tag) {
+        for (jl = l.return; jl; )
+            switch (jl.tag) {
                 case 5:
                 case 13:
                     bt = !1;
@@ -3519,11 +3519,11 @@ Error generating stack: ` +
                     bt = !0;
                     return;
                 default:
-                    Yl = Yl.return;
+                    jl = jl.return;
             }
     }
     function Ba(l) {
-        if (l !== Yl) return !1;
+        if (l !== jl) return !1;
         if (!P) return ds(l), (P = !0), !1;
         var t = l.tag,
             u;
@@ -3563,11 +3563,11 @@ Error generating stack: ` +
             t === 27
                 ? ((t = dl),
                   cu(l.type) ? ((l = Lf), (Lf = null), (dl = l)) : (dl = t))
-                : (dl = Yl ? mt(l.stateNode.nextSibling) : null);
+                : (dl = jl ? mt(l.stateNode.nextSibling) : null);
         return !0;
     }
     function xa() {
-        (dl = Yl = null), (P = !1);
+        (dl = jl = null), (P = !1);
     }
     function ys() {
         var l = Au;
@@ -4754,8 +4754,8 @@ Error generating stack: ` +
             : ((l = to()), (V.lanes |= l), (uu |= l), t);
     }
     function l0(l, t, u, a, e) {
-        var n = O.p;
-        O.p = n !== 0 && 8 > n ? n : 8;
+        var n = M.p;
+        M.p = n !== 0 && 8 > n ? n : 8;
         var c = S.T,
             f = {};
         (S.T = f), Ic(l, !1, t, u);
@@ -4779,7 +4779,7 @@ Error generating stack: ` +
                 tt()
             );
         } finally {
-            (O.p = n), (S.T = c);
+            (M.p = n), (S.T = c);
         }
     }
     function xd() {}
@@ -6311,7 +6311,7 @@ Error generating stack: ` +
                               (i.stateNode = f),
                               (i.return = t),
                               (t.child = i),
-                              (Yl = t),
+                              (jl = t),
                               (dl = null),
                               (i = !0))
                             : (i = !1);
@@ -6397,7 +6397,7 @@ Error generating stack: ` +
                     ? ((t.flags |= 192), (t.child = l.child), (t = null))
                     : ((l = i.treeContext),
                       (dl = mt(f.nextSibling)),
-                      (Yl = t),
+                      (jl = t),
                       (P = !0),
                       (Au = null),
                       (bt = !1),
@@ -6745,7 +6745,7 @@ Error generating stack: ` +
                             }
                             for (
                                 dl = mt(l.firstChild),
-                                    Yl = t,
+                                    jl = t,
                                     P = !0,
                                     Au = null,
                                     bt = !0,
@@ -6776,7 +6776,7 @@ Error generating stack: ` +
                             : P ||
                               ((u = t.type),
                               (l = t.pendingProps),
-                              (a = En(C.current).createElement(u)),
+                              (a = En(Q.current).createElement(u)),
                               (a[Bl] = t),
                               (a[Xl] = l),
                               Rl(a, u, l),
@@ -6796,8 +6796,8 @@ Error generating stack: ` +
                     l === null &&
                         P &&
                         ((a = t.stateNode =
-                            Yo(t.type, t.pendingProps, C.current)),
-                        (Yl = t),
+                            Yo(t.type, t.pendingProps, Q.current)),
+                        (jl = t),
                         (bt = !0),
                         (e = dl),
                         cu(t.type)
@@ -6816,7 +6816,7 @@ Error generating stack: ` +
                             ((a = y1(a, t.type, t.pendingProps, bt)),
                             a !== null
                                 ? ((t.stateNode = a),
-                                  (Yl = t),
+                                  (jl = t),
                                   (dl = mt(a.firstChild)),
                                   (bt = !1),
                                   (e = !0))
@@ -6845,7 +6845,7 @@ Error generating stack: ` +
                             ((u = h1(u, t.pendingProps, bt)),
                             u !== null
                                 ? ((t.stateNode = u),
-                                  (Yl = t),
+                                  (jl = t),
                                   (dl = null),
                                   (l = !0))
                                 : (l = !1)),
@@ -7072,7 +7072,7 @@ Error generating stack: ` +
                     null
                 );
             case 27:
-                be(t), (u = C.current);
+                be(t), (u = Q.current);
                 var e = t.type;
                 if (l !== null && t.stateNode != null)
                     l.memoizedProps !== a && Yt(t);
@@ -7097,7 +7097,7 @@ Error generating stack: ` +
                     }
                     if (((l = q.current), Ba(t))) vs(t);
                     else {
-                        switch (((e = En(C.current)), l)) {
+                        switch (((e = En(Q.current)), l)) {
                             case 1:
                                 l = e.createElementNS(
                                     "http://www.w3.org/2000/svg",
@@ -7192,12 +7192,12 @@ Error generating stack: ` +
                 else {
                     if (typeof a != "string" && t.stateNode === null)
                         throw Error(d(166));
-                    if (((l = C.current), Ba(t))) {
+                    if (((l = Q.current), Ba(t))) {
                         if (
                             ((l = t.stateNode),
                             (u = t.memoizedProps),
                             (a = null),
-                            (e = Yl),
+                            (e = jl),
                             e !== null)
                         )
                             switch (e.tag) {
@@ -9538,14 +9538,14 @@ Error generating stack: ` +
             ) {
                 (a = S.T),
                     (S.T = null),
-                    (e = O.p),
-                    (O.p = 2),
+                    (e = M.p),
+                    (M.p = 2),
                     (c = ll),
                     (ll |= 4);
                 try {
                     Zd(l, t, u);
                 } finally {
-                    (ll = c), (O.p = e), (S.T = a);
+                    (ll = c), (M.p = e), (S.T = a);
                 }
             }
             (Ul = 1), vo(), yo(), ho();
@@ -9559,8 +9559,8 @@ Error generating stack: ` +
                 u = (t.flags & 13878) !== 0;
             if ((t.subtreeFlags & 13878) !== 0 || u) {
                 (u = S.T), (S.T = null);
-                var a = O.p;
-                O.p = 2;
+                var a = M.p;
+                M.p = 2;
                 var e = ll;
                 ll |= 4;
                 try {
@@ -9642,7 +9642,7 @@ Error generating stack: ` +
                     }
                     (Un = !!Gf), (Xf = Gf = null);
                 } finally {
-                    (ll = e), (O.p = a), (S.T = u);
+                    (ll = e), (M.p = a), (S.T = u);
                 }
             }
             (l.current = t), (Ul = 2);
@@ -9656,14 +9656,14 @@ Error generating stack: ` +
                 u = (t.flags & 8772) !== 0;
             if ((t.subtreeFlags & 8772) !== 0 || u) {
                 (u = S.T), (S.T = null);
-                var a = O.p;
-                O.p = 2;
+                var a = M.p;
+                M.p = 2;
                 var e = ll;
                 ll |= 4;
                 try {
                     V0(l, t.alternate, t);
                 } finally {
-                    (ll = e), (O.p = a), (S.T = u);
+                    (ll = e), (M.p = a), (S.T = u);
                 }
             }
             Ul = 3;
@@ -9695,7 +9695,7 @@ Error generating stack: ` +
                     );
                 } catch {}
             if (a !== null) {
-                (t = S.T), (e = O.p), (O.p = 2), (S.T = null);
+                (t = S.T), (e = M.p), (M.p = 2), (S.T = null);
                 try {
                     for (
                         var n = l.onRecoverableError, c = 0;
@@ -9706,7 +9706,7 @@ Error generating stack: ` +
                         n(f.value, { componentStack: f.stack });
                     }
                 } finally {
-                    (S.T = t), (O.p = e);
+                    (S.T = t), (M.p = e);
                 }
             }
             (va & 3) !== 0 && mn(),
@@ -9734,9 +9734,9 @@ Error generating stack: ` +
         Ef = 0;
         var u = Ln(va),
             a = S.T,
-            e = O.p;
+            e = M.p;
         try {
-            (O.p = 32 > u ? 32 : u), (S.T = null), (u = Af), (Af = null);
+            (M.p = 32 > u ? 32 : u), (S.T = null), (u = Af), (Af = null);
             var n = eu,
                 c = va;
             if (((Ul = 0), (oa = eu = null), (va = 0), (ll & 6) !== 0))
@@ -9755,7 +9755,7 @@ Error generating stack: ` +
                 } catch {}
             return !0;
         } finally {
-            (O.p = e), (S.T = a), ro(l, t);
+            (M.p = e), (S.T = a), ro(l, t);
         }
     }
     function go(l, t, u) {
@@ -10408,7 +10408,7 @@ Error generating stack: ` +
                               (m = h),
                               (X = X ? qu(X) : null),
                               X !== null &&
-                                  ((el = Q(X)),
+                                  ((el = C(X)),
                                   (Y = X.tag),
                                   X !== el ||
                                       (Y !== 5 && Y !== 27 && Y !== 6)) &&
@@ -11666,8 +11666,8 @@ Error generating stack: ` +
             ? l
             : l.ownerDocument;
     }
-    var Ct = O.d;
-    O.d = { f: m1, r: g1, D: S1, C: b1, L: _1, m: T1, X: A1, S: E1, M: z1 };
+    var Ct = M.d;
+    M.d = { f: m1, r: g1, D: S1, C: b1, L: _1, m: T1, X: A1, S: E1, M: z1 };
     function m1() {
         var l = Ct.f(),
             t = hn();
@@ -11858,7 +11858,7 @@ Error generating stack: ` +
         }
     }
     function Xo(l, t, u, a) {
-        var e = (e = C.current) ? An(e) : null;
+        var e = (e = Q.current) ? An(e) : null;
         if (!e) throw Error(d(446));
         switch (l) {
             case "meta":
@@ -12387,21 +12387,21 @@ Error generating stack: ` +
     function H1(l, t, u, a) {
         var e = S.T;
         S.T = null;
-        var n = O.p;
+        var n = M.p;
         try {
-            (O.p = 2), Wf(l, t, u, a);
+            (M.p = 2), Wf(l, t, u, a);
         } finally {
-            (O.p = n), (S.T = e);
+            (M.p = n), (S.T = e);
         }
     }
     function B1(l, t, u, a) {
         var e = S.T;
         S.T = null;
-        var n = O.p;
+        var n = M.p;
         try {
-            (O.p = 8), Wf(l, t, u, a);
+            (M.p = 8), Wf(l, t, u, a);
         } finally {
-            (O.p = n), (S.T = e);
+            (M.p = n), (S.T = e);
         }
     }
     function Wf(l, t, u, a) {
@@ -12460,7 +12460,7 @@ Error generating stack: ` +
     var Rn = null;
     function Ff(l) {
         if (((Rn = null), (l = qu(l)), l !== null)) {
-            var t = Q(l);
+            var t = C(l);
             if (t === null) l = null;
             else {
                 var u = t.tag;
@@ -12642,7 +12642,7 @@ Error generating stack: ` +
     function Io(l) {
         var t = qu(l.target);
         if (t !== null) {
-            var u = Q(t);
+            var u = C(t);
             if (u !== null) {
                 if (((t = u.tag), t === 13)) {
                     if (((t = $(u)), t !== null)) {
@@ -12804,7 +12804,7 @@ Error generating stack: ` +
     };
     var tv = B.version;
     if (tv !== "19.1.0") throw Error(d(527, tv, "19.1.0"));
-    O.findDOMNode = function (l) {
+    M.findDOMNode = function (l) {
         var t = l._reactInternals;
         if (t === void 0)
             throw typeof l.render == "function"
@@ -12938,11 +12938,11 @@ function I1({ themeToggle: E, toggleFunTheme: B }) {
     });
 }
 function P1() {
-    const [E, B] = jl.useState(() => localStorage.getItem("theme") || "light");
-    jl.useEffect(() => {
+    const [E, B] = Yl.useState(() => localStorage.getItem("theme") || "light");
+    Yl.useEffect(() => {
         document.body.classList.toggle("darkTheme", E === "dark");
     }, [E]);
-    const M = () => {
+    const O = () => {
         const d = E === "light" ? "dark" : "light";
         B(d), localStorage.setItem("theme", d);
     };
@@ -12958,7 +12958,7 @@ function P1() {
                 } `,
                 alt: "Картинка логотипа",
             }),
-            x.jsx(I1, { toggleFunTheme: M, themeToggle: E }),
+            x.jsx(I1, { toggleFunTheme: O, themeToggle: E }),
         ],
     });
 }
@@ -12993,23 +12993,23 @@ function ey({ limitText: E }) {
 function ny({
     name: E,
     text: B,
-    setText: M,
+    setText: O,
     placeholderValue: d,
     limitText: U,
 }) {
-    const [Q, $] = jl.useState(!1),
+    const [C, $] = Yl.useState(!1),
         hl = (N) => {
             const _ = N.target.value;
             if (typeof U != "number") {
-                M(_);
+                O(_);
                 return;
             }
             _.length <= U
-                ? (M(_), $(_.length === U))
-                : (M(_.slice(0, U)), $(!0));
+                ? (O(_), $(_.length === U))
+                : (O(_.slice(0, U)), $(!0));
         };
     return (
-        jl.useEffect(() => {
+        Yl.useEffect(() => {
             typeof U == "number" && U > B.length ? $(!1) : $(!0),
                 typeof U != "number" && $(!1);
         }, [U, B]),
@@ -13018,13 +13018,13 @@ function ny({
                 x.jsx("textarea", {
                     name: E,
                     placeholder: d,
-                    className: `${hv.textInput} ${Q && hv.error}`,
+                    className: `${hv.textInput} ${C && hv.error}`,
                     required: !0,
                     autoFocus: !0,
                     value: B,
                     onChange: hl,
                 }),
-                Q && x.jsx(ey, { limitText: U }),
+                C && x.jsx(ey, { limitText: U }),
             ],
         })
     );
@@ -13034,18 +13034,18 @@ const cy = "_title_1eiv8_1",
 function iy({ children: E }) {
     return x.jsx("h1", { className: fy.title, children: E });
 }
-const sy = "_container_13at7_1",
+const sy = "_container_877tr_1",
     oy = { container: sy },
     vy = "_checkboxBox_662a7_1",
     dy = "_checkbox_662a7_1",
     yy = "_label_662a7_101",
     qn = { checkboxBox: vy, checkbox: dy, label: yy };
-function mv({ children: E, connec: B, isChecked: M, setIsChecked: d }) {
+function mv({ children: E, connec: B, isChecked: O, setIsChecked: d }) {
     return x.jsxs("div", {
         className: qn.checkboxBox,
         children: [
             x.jsx("input", {
-                checked: M,
+                checked: O,
                 onChange: (U) => d(U.target.checked),
                 className: qn.checkbox,
                 type: "checkbox",
@@ -13074,7 +13074,7 @@ const hy = "_btnBox_14uru_1",
         reduceBtn: _y,
     };
 function Ty({ limitText: E, setLimitText: B }) {
-    const M = (d) => {
+    const O = (d) => {
         const U = d.target.valueAsNumber;
         isNaN(U) ? B("") : B(U);
     };
@@ -13082,7 +13082,7 @@ function Ty({ limitText: E, setLimitText: B }) {
         className: Se.boxCastomInputNumber,
         children: [
             x.jsx("input", {
-                onChange: M,
+                onChange: O,
                 value: E,
                 type: "number",
                 className: Se.inputNumber,
@@ -13108,45 +13108,50 @@ function Ty({ limitText: E, setLimitText: B }) {
 function Ey({
     isSpaceOff: E,
     setIsSpaceOff: B,
-    limitText: M,
+    limitText: O,
     setLimitText: d,
     readingtTime: U,
 }) {
-    const [Q, $] = jl.useState(!1);
-    return x.jsxs("div", {
-        className: ry.btnBox,
-        children: [
-            x.jsx(mv, {
-                connec: "one",
-                isChecked: E,
-                setIsChecked: B,
-                children: "Exclude spaces",
-            }),
-            x.jsx(mv, {
-                isChecked: Q,
-                setIsChecked: $,
-                connec: "two",
-                children: "Set character limit",
-            }),
-            Q && x.jsx(Ty, { limitText: M, setLimitText: d }),
-            x.jsxs("p", {
-                children: [
-                    "Approx. reading time(Avg. 50WPM): < ",
-                    U,
-                    " minute",
-                ],
-            }),
-        ],
-    });
+    const [C, $] = Yl.useState(!1);
+    return (
+        Yl.useEffect(() => {
+            C || d("");
+        }, [C]),
+        x.jsxs("div", {
+            className: ry.btnBox,
+            children: [
+                x.jsx(mv, {
+                    connec: "one",
+                    isChecked: E,
+                    setIsChecked: B,
+                    children: "Exclude spaces",
+                }),
+                x.jsx(mv, {
+                    isChecked: C,
+                    setIsChecked: $,
+                    connec: "two",
+                    children: "Set character limit",
+                }),
+                C && x.jsx(Ty, { limitText: O, setLimitText: d }),
+                x.jsxs("p", {
+                    children: [
+                        "Approx. reading time(Avg. 50WPM): < ",
+                        U,
+                        " minute",
+                    ],
+                }),
+            ],
+        })
+    );
 }
 const Ay = "_card_1wax2_1",
     zy = "_count_1wax2_29",
     Oy = "_title_1wax2_43",
     ci = { card: Ay, count: zy, title: Oy };
-function My({ children: E, count: B, imageUrl: M, backgroundColor: d }) {
+function My({ children: E, count: B, imageUrl: O, backgroundColor: d }) {
     return x.jsxs("div", {
         className: `${ci.card}`,
-        style: { "--custom-url": `url('${M}')`, "--background-color": `${d}` },
+        style: { "--custom-url": `url('${O}')`, "--background-color": `${d}` },
         children: [
             x.jsx("h2", { className: ci.count, children: B }),
             x.jsx("p", { className: ci.title, children: E }),
@@ -13172,11 +13177,11 @@ const Dy = "_cardBox_1lm9p_1",
             backgroundColor: "#FE8159",
         },
     ],
-    Ny = (E, B, M) => {
+    Ny = (E, B, O) => {
         let d = 0;
         return (
             B == 0
-                ? M
+                ? O
                     ? (d = E.replace(/\s+/g, "").length)
                     : (d = E.length)
                 : B == 1
@@ -13190,16 +13195,16 @@ const Dy = "_cardBox_1lm9p_1",
 function py({ text: E, isSpaceOff: B }) {
     return x.jsx("div", {
         className: Uy.cardBox,
-        children: Ry.map((M, d) =>
+        children: Ry.map((O, d) =>
             x.jsx(
                 My,
                 {
                     count: Ny(E, d, d == 0 && B),
-                    imageUrl: M.imageUrl,
-                    backgroundColor: M.backgroundColor,
-                    children: M.title,
+                    imageUrl: O.imageUrl,
+                    backgroundColor: O.backgroundColor,
+                    children: O.title,
                 },
-                M.title
+                O.title
             )
         ),
     });
@@ -13209,22 +13214,22 @@ const Hy = "_btn_semiv_1",
     xy = "_svgRotate_semiv_41",
     fi = { btn: Hy, svg: By, svgRotate: xy };
 function qy({ setIsLimit: E, isLimit: B }) {
-    const [M, d] = jl.useState(!1);
+    const [O, d] = Yl.useState(!1);
     return x.jsxs("button", {
         className: fi.btn,
         onClick: () => {
-            d(!M), E(!B);
+            d(!O), E(!B);
         },
-        "aria-expanded": M,
+        "aria-expanded": O,
         children: [
-            M ? "Show less" : "See more",
+            O ? "Show less" : "See more",
             x.jsx("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
                 fill: "none",
                 viewBox: "0 0 24 24",
                 strokeWidth: "1.5",
                 stroke: "currentColor",
-                className: `${fi.svg} ${M ? fi.svgRotate : ""}`,
+                className: `${fi.svg} ${O ? fi.svgRotate : ""}`,
                 children: x.jsx("path", {
                     strokeLinecap: "round",
                     strokeLinejoin: "round",
@@ -13239,11 +13244,11 @@ const Yy = "_li_bfr22_1",
     Gy = "_percent_bfr22_23",
     Xy = "_progress_bfr22_37",
     Yn = { li: Yy, letter: jy, percent: Gy, progress: Xy };
-function Cy({ letter: E = "", count: B, text: M, isSpaceOff: d }) {
+function Cy({ letter: E = "", count: B, text: O, isSpaceOff: d }) {
     const U = parseFloat(
         d
-            ? ((B / M.replace(/\s+/g, "").length) * 100).toFixed(2)
-            : ((B / M.length) * 100).toFixed(2)
+            ? ((B / O.replace(/\s+/g, "").length) * 100).toFixed(2)
+            : ((B / O.length) * 100).toFixed(2)
     );
     return x.jsxs("li", {
         className: Yn.li,
@@ -13263,10 +13268,10 @@ const Qy = "_analysisBox_13wd6_1",
     Ly = "_noText_13wd6_43",
     jn = { analysisBox: Qy, title: Zy, ul: Vy, noText: Ly };
 function Ky({ text: E, isSpaceOff: B }) {
-    const [M, d] = jl.useState(null),
-        U = Array(M == null ? void 0 : M.unique).fill(null),
-        [Q, $] = jl.useState(!0);
-    jl.useEffect(() => {
+    const [O, d] = Yl.useState(null),
+        U = Array(O == null ? void 0 : O.unique).fill(null),
+        [C, $] = Yl.useState(!0);
+    Yl.useEffect(() => {
         const N = hl(E);
         d(N);
     }, [E]);
@@ -13288,9 +13293,9 @@ function Ky({ text: E, isSpaceOff: B }) {
             x.jsx("ul", {
                 className: jn.ul,
                 children:
-                    M != null && M.unique
-                        ? U.slice(0, Q ? 5 : void 0).map((N, _) => {
-                              const [p, W] = M.symbolCountArr[_] || [];
+                    O != null && O.unique
+                        ? U.slice(0, C ? 5 : void 0).map((N, _) => {
+                              const [p, W] = O.symbolCountArr[_] || [];
                               return x.jsx(
                                   Cy,
                                   {
@@ -13308,15 +13313,17 @@ function Ky({ text: E, isSpaceOff: B }) {
                                   "No characters found. Start typing to see letter density.",
                           }),
             }),
-            E && x.jsx(qy, { setIsLimit: $, isLimit: Q }),
+            O &&
+                O.symbolCountArr.length > 5 &&
+                x.jsx(qy, { setIsLimit: $, isLimit: C }),
         ],
     });
 }
 function Jy() {
-    const [E, B] = jl.useState(""),
-        [M, d] = jl.useState(!1),
-        [U, Q] = jl.useState(""),
-        [$, hl] = jl.useState(0),
+    const [E, B] = Yl.useState(""),
+        [O, d] = Yl.useState(!1),
+        [U, C] = Yl.useState(""),
+        [$, hl] = Yl.useState(0),
         N = () =>
             hl(
                 Math.ceil(
@@ -13324,7 +13331,7 @@ function Jy() {
                 )
             );
     return (
-        jl.useEffect(() => {
+        Yl.useEffect(() => {
             N();
         }, [E]),
         x.jsxs("div", {
@@ -13340,18 +13347,18 @@ function Jy() {
                     placeholderValue: "Введите текст",
                 }),
                 x.jsx(Ey, {
-                    isSpaceOff: M,
+                    isSpaceOff: O,
                     setIsSpaceOff: d,
                     limitText: U,
-                    setLimitText: Q,
+                    setLimitText: C,
                     readingtTime: $,
                 }),
-                x.jsx(py, { text: E, isSpaceOff: M }),
-                x.jsx(Ky, { text: E, isSpaceOff: M }),
+                x.jsx(py, { text: E, isSpaceOff: O }),
+                x.jsx(Ky, { text: E, isSpaceOff: O }),
             ],
         })
     );
 }
 $1.createRoot(document.getElementById("root")).render(
-    x.jsx(jl.StrictMode, { children: x.jsx(Jy, {}) })
+    x.jsx(Yl.StrictMode, { children: x.jsx(Jy, {}) })
 );
