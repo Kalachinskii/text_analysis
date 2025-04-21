@@ -4,3 +4,10 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 2.5rem;
 }
+@media (max-width: 684px) {
+    .cardBox {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

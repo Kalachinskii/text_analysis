@@ -10,8 +10,9 @@
 }
 
 .percent {
-    width: 100px;
-    text-align: end;
+    padding-left: 15px;
+    width: 150px;
+    /* text-align: end; */
     color: var(--color-text);
 }
 

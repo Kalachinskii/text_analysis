@@ -24,3 +24,11 @@
     color: var(--color-text);
     font-weight: 400;
 }
+
+/* @media (max-width: 684px) {
+    .cardBox {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+} */
