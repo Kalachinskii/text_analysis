@@ -17,6 +17,7 @@ function App() {
             <Logo />
             <Title>Analyze your text in real-time.</Title>
             <Textaria
+                limitText={limitText}
                 name="text"
                 text={text}
                 setText={setText}
