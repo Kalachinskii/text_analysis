@@ -1,0 +1,14 @@
+.errorText {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: "DM Sans", "DM Sans Fallback";
+    color: var(--color-error);
+    background: var(--color-bacground-transparent);
+    align-self: self-start;
+    display: flex;
+    align-items: center;
+}
+.svgError {
+    margin-right: 5px;
+}
