@@ -10,6 +10,7 @@ import { AnalysisBox } from "../AnalysisBox/Analysis";
 function App() {
     const [text, setText] = useState<string>("");
     const [isSpaceOff, setIsSpaceOff] = useState<boolean>(false);
+    const [limitText, setLimitText] = useState<number | "">("");
 
     return (
         <div className={styles.container}>
@@ -21,7 +22,12 @@ function App() {
                 setText={setText}
                 placeholderValue="Введите текст"
             />
-            <BtnBox isSpaceOff={isSpaceOff} setIsSpaceOff={setIsSpaceOff} />
+            <BtnBox
+                isSpaceOff={isSpaceOff}
+                setIsSpaceOff={setIsSpaceOff}
+                limitText={limitText}
+                setLimitText={setLimitText}
+            />
             <CardBox text={text} isSpaceOff={isSpaceOff} />
             <AnalysisBox text={text} isSpaceOff={isSpaceOff} />
         </div>

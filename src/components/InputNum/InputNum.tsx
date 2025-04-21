@@ -1,15 +1,13 @@
-import { useState } from "react";
 import styles from "./InputNum.module.css";
+import { IInputNum } from "./IInputNum";
 
-export function InputNum() {
-    const [limitText, setLimitText] = useState<number | "">("");
-
+export function InputNum({ limitText, setLimitText }: IInputNum) {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.valueAsNumber;
 
         if (!isNaN(value)) {
             setLimitText(value);
-        }
+        } else setLimitText("");
     };
 
     return (
@@ -23,12 +21,12 @@ export function InputNum() {
             <div className={styles.InputBtn}>
                 <div
                     className={styles.addBtn}
-                    onClick={() => setLimitText((prev) => +prev + 1)}
+                    onClick={() => setLimitText(+limitText + 1)}
                 >
                     &#9650;
                 </div>
                 <div
-                    onClick={() => setLimitText((prev) => +prev - 1)}
+                    onClick={() => setLimitText(+limitText - 1)}
                     className={styles.reduceBtn}
                 >
                     &#9660;

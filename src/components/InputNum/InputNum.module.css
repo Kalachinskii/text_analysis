@@ -28,6 +28,9 @@
 .inputNumber:focus-within + .InputBtn,
 .inputNumber:focus-within + .InputBtn .addBtn,
 .inputNumber:focus-within + .InputBtn .reduceBtn,
+.inputNumber:hover + .InputBtn,
+.inputNumber:hover + .InputBtn .addBtn,
+.inputNumber:hover + .InputBtn .reduceBtn,
 .InputBtn:hover,
 .InputBtn:hover > .addBtn,
 .InputBtn:hover > .reduceBtn {

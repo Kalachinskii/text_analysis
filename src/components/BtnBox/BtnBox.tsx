@@ -4,7 +4,12 @@ import styles from "./BtnBox.module.css";
 import { IBtnBox } from "./IBtnBox";
 import { InputNum } from "../InputNum/InputNum";
 
-export default function BtnBox({ isSpaceOff, setIsSpaceOff }: IBtnBox) {
+export default function BtnBox({
+    isSpaceOff,
+    setIsSpaceOff,
+    limitText,
+    setLimitText,
+}: IBtnBox) {
     const [isChecked, setIsChecked] = useState<boolean>(false);
 
     return (
@@ -23,7 +28,9 @@ export default function BtnBox({ isSpaceOff, setIsSpaceOff }: IBtnBox) {
             >
                 Set character limit
             </Checkbox>
-            {isChecked && <InputNum />}
+            {isChecked && (
+                <InputNum limitText={limitText} setLimitText={setLimitText} />
+            )}
             <p>Approx. reading time(Avg. 50WPM): &#8250;1 minute</p>
         </div>
     );
