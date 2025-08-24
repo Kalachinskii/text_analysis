@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
+# Text Analysis Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект представляет собой веб-приложение для анализа текста с различными метриками и статистикой.
 
-Currently, two official plugins are available:
+- Приложение позволяет пользователям анализировать текстовый контент, получая детальную статистику:
+  - Подсчет символов, слов, предложений
+  - Анализ частоты слов
+  - Определение времени чтения
+  - Другие лингвистические метрики
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Проект демонстрирует навыки работы с обработкой текста, алгоритмами анализа данных и созданием интерактивного пользовательского интерфейса.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Оглавление
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- [Демо](#демо)
+- [Функциональность](#функциональность)
+- [Стек технологий](#стек-технологий)
+- [Установка и запуск](#установка-и-запуск)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Демо
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+**[👉 Посмотреть работающую версию](https://kalachinskii.github.io/text_analysis/)**
+
+## Функциональность
+
+- **Ввод текста:** Простое текстовое поле для ввода или вставки анализируемого текста
+- **Базовая статистика:**
+  - Подсчет символов (с пробелами и без)
+  - Подсчет слов
+  - Подсчет предложений
+  - Подсчет абзацев
+- **Расширенная статистика:**
+  - Время чтения (приблизительное)
+  - Самые частые слова
+  - Плотность ключевых слов
+- **Визуализация:**
+  - Графическое представление статистики
+
+## Стек технологий
+
+- **Фронтенд:** React,
+- **Сборка:** Vite
+- **Язык:** TypeScript
+- **Обработка текста:** Пользовательские алгоритмы на TypeScript
+- **Стилизация:** CSS
+- **Развертывание:** GitHub Pages
+
+## Установка и запуск
+
+1.  **Склонируйте репозиторий:**
+
+    ```bash
+    git clone https://github.com/Kalachinskii/text_analysis.git
+    ```
+
+2.  **Перейдите в созданную папку:**
+
+    ```bash
+    cd text_analysis
+    ```
+
+3.  **Установите зависимости:**
+
+    ```bash
+    npm install
+    ```
+
+    _(Этот шаг загрузит все необходимые библиотеки)_
+
+4.  **Запустите сервер для разработки:**
+
+    ```bash
+    npm run dev
+    ```
+
+    _(Команда запустит приложение в режиме разработки. Оно откроется по адресу [http://localhost:5173](http://localhost:5173))_
+
+5.  **Откройте браузер и перейдите по адресу из предыдущего шага.**
+
+    _(Если браузер не открылся автоматически, скопируйте адрес из терминала и вставьте в адресную строку браузера вручную)_
